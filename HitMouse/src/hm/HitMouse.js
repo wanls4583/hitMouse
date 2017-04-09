@@ -35,11 +35,6 @@ hm.HitMouse=function(){
 			}
 		});
 	});
-	//锤子位置改变
-	/*s.addEventListener(annie.MouseEvent.MOUSE_MOVE,function(e){
-		s.hammerObj.x = e.stageX;
-		s.hammerObj.y = e.stageY;
-	});*/
 	//锤子击打
 	s.clickLayer.addEventListener(annie.MouseEvent.CLICK,function(e){
 		s.hammerObj.gotoAndPlay(0);

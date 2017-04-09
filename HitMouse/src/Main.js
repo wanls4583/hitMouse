@@ -23,9 +23,12 @@ window.addEventListener("load",function(){
             if(result.sceneId==result.sceneTotal) {
                 var s = new hm.HitMouse()
                 stage.addChild(s);
+                //锤子位置改变
                 stage.addEventListener(annie.MouseEvent.MOUSE_MOVE,function(e){
-                    s.hammerObj.x = e.stageX;
-                    s.hammerObj.y = e.stageY;
+                    if(document.getElementsByTagName('html')[0].className.indexOf('hideMouse')!=-1){
+                        s.hammerObj.x = e.stageX;
+                        s.hammerObj.y = e.stageY;
+                    }  
                 });
             }
         });
