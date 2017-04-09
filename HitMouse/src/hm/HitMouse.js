@@ -51,11 +51,9 @@ hm.HitMouse=function(){
 				if(obj && obj.getDrawRect().isPointIn(new annie.Point(e.stageX,e.stageY))){
 					(function(obj,i){
 						//眩晕效果
-						var mouse = new hm.Mouse_2();
-						mouse.x = obj.x - 40;
-						mouse.y = obj.y - 16;
-						mouse.width = 126;
-						mouse.height = 126;
+						var mouse = new hm.MouseSwim();
+						mouse.x = obj.x - 55;
+						mouse.y = obj.y - 26;
 						mouse.thisNum = hm.mouseHasShowed[i];
 						hm.xxMouse[hm.xxMouse.length] = hm.mouseHasShowed[i];
 						s.mouseLayer.addChild(mouse);
@@ -82,7 +80,7 @@ hm.HitMouse.prototype.initUI=function(){
 	var _d1=new hm.GameOver();
 	_d1.name="gameOver";
 	s.gameOver=_d1;
-	var _d2=new hm.F2xAuto_34();
+	var _d2=new hm.F2xAuto_35();
 	_d2.name="clickLayer";
 	s.clickLayer=_d2;
 	Flash2x.d(_d2,{o:0});
@@ -90,14 +88,14 @@ hm.HitMouse.prototype.initUI=function(){
 	_d3.name="hammerObj";
 	s.hammerObj=_d3;
 	Flash2x.d(_d3,{x:632.5,y:17.2,a:0.5051,b:0.5051});
-	var _d4=new hm.F2xAuto_20();
+	var _d4=new hm.F2xAuto_21();
 	_d4.name="mouseLayer";
 	s.mouseLayer=_d4;
 	var _d6=Flash2x.t(0,decodeURI("30S"),24,"#FF0000","Microsoft YaHei",2,2,52,31.7,26,"center",false,true,"multiline",false);
 	_d6.name="timeCountDown";
 	s.timeCountDown=_d6;
 	Flash2x.d(_d6,{x:563});
-	var _d5=new hm.F2xAuto_23();
+	var _d5=new hm.F2xAuto_24();
 	_d5.name="gameBgObj";
 	s.gameBgObj=_d5;
 	Flash2x.d(_d5,{y:-4});
@@ -118,7 +116,7 @@ hm.HitMouse.prototype.countDown = function(){
 	var intervalId = setInterval(function(){
 		s.timeCountDown.text = hm.timeCountDown+'S';
 		hm.timeCountDown--;
-		if(hm.timeCountDown == 0)
+		if(hm.timeCountDown < 0)
 			clearInterval(intervalId);
 	},1000);
 }

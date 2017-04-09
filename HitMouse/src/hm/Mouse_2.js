@@ -6,10 +6,10 @@ hm.Mouse_2=function(){
 	s.as(function(){
 		this.stop();
 		setTimeout(function(){
-			s.parent.removeChild(s);
+			s.parent.parent.removeChild(s.parent);
 			//移除眩晕的老鼠的索引
 			for(var i = 0; i<hm.xxMouse.length; i++){
-				if(hm.xxMouse[i] == s.thisNum)
+				if(hm.xxMouse[i] == s.parent.thisNum)
 					hm.xxMouse.splice(i,1);
 			}
 		},800);
@@ -20,18 +20,18 @@ hm.Mouse_2.prototype.initUI=function(){
 	var s = this;
 	//f2x_auto_created_init_start
 	var _d0=new hm.swdedrfrefd();
-	var _d1=new hm.F2xAuto_9();
-	var _d2=new hm.F2xAuto_10();
-	var _d3=new hm.F2xAuto_11();
-	var _d4=new hm.F2xAuto_12();
-	var _d5=new hm.F2xAuto_13();
-	var _d6=new hm.F2xAuto_14();
-	var _d7=new hm.F2xAuto_15();
-	var _d8=new hm.F2xAuto_16();
-	var _d9=new hm.F2xAuto_17();
+	var _d1=new hm.F2xAuto_10();
+	var _d2=new hm.F2xAuto_11();
+	var _d3=new hm.F2xAuto_12();
+	var _d4=new hm.F2xAuto_13();
+	var _d5=new hm.F2xAuto_14();
+	var _d6=new hm.F2xAuto_15();
+	var _d7=new hm.F2xAuto_16();
+	var _d8=new hm.F2xAuto_17();
+	var _d9=new hm.F2xAuto_18();
 	var _d10=new hm.swswdwdesesd();
-	var _d11=new hm.F2xAuto_18();
-	var _d12=new hm.F2xAuto_19();
+	var _d11=new hm.F2xAuto_19();
+	var _d12=new hm.F2xAuto_20();
 	var _d13=new hm.aqswdeded();
 	var _d14=new hm.aqswdeded();
 	s.a().b(8).c(_d0,{x:75.45,y:57.55});
