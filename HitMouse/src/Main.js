@@ -12,7 +12,7 @@ window.addEventListener("load",function(){
      * 缩放模式
      * 渲染模式
      */
-    var stage=new annie.Stage("annieEngine",619,289,24,annie.StageScaleMode.FIXED_HEIGHT,0);
+    var stage=new annie.Stage("annieEngine",619,289,24,annie.StageScaleMode.NO_SCALE,0);
     stage.addEventListener(annie.Event.INIT_TO_STAGE,function (e) {
         Flash2x.loadScene("hm",function(per){
             //加载进度
@@ -21,8 +21,14 @@ window.addEventListener("load",function(){
             //加载完成 result 里包含了当前加载完成的是哪个场景序号，以及总加载场景数有多少，所以
             //需要同时加载多个模块时可以判断已经加载好的后直接出内容，其他偷偷在后台加载
             if(result.sceneId==result.sceneTotal) {
-                stage.addChild(new hm.HitMouse());
+                var s = new hm.HitMouse()
+                stage.addChild(s);
+                stage.addEventListener(annie.MouseEvent.MOUSE_MOVE,function(e){
+                    s.hammerObj.x = e.stageX;
+                    s.hammerObj.y = e.stageY;
+                });
             }
         });
-    })
+    });
+    
 });
