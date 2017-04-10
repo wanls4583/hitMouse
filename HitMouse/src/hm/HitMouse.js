@@ -37,6 +37,8 @@ hm.HitMouse=function(){
 	});
 	//锤子击打
 	s.clickLayer.addEventListener(annie.MouseEvent.CLICK,function(e){
+		s.hammerObj.x = e.stageX;
+		s.hammerObj.y = e.stageY;
 		s.hammerObj.gotoAndPlay(0);
 		if(!hm.isRendering){
 			var width = s.stage.desWidth / 3
